@@ -31,27 +31,25 @@
 
 # 1 <= word1.length, word2.length <= 100
 # word1 and word2 consist of lowercase English letters.
-
-def mergeAlternately(word1: str, word2: str) -> str:
-    len1 = len(word1)
-    len2 = len(word2)
+def combine (word1,word2):
     newword = ''
-    if len1 > len2:
-        for i in range(len2):
-            newword+=word1[i]
-            newword+=word2[i]
-        newword+=word1[len2:]
-
-    elif len1< len2:
-        for i in range(len1):
-            newword+=word1[i]
-            newword+=word2[i]
-        newword+=word2[len1:]
-
-    elif len1 == len2:
-        for i in range(len1):
+    for i in range(len(word1)):
             newword+=word1[i]
             newword+=word2[i]
     return newword
+def mergeAlternately(word1: str, word2: str) -> str:
+    len1 = len(word1)
+    len2 = len(word2)
+    
+    if len1 > len2:
+        return combine(word1[0:len2],word2)+word1[len2:]
 
-print(mergeAlternately("abc","def"))
+
+    elif len1< len2:
+        return combine(word1,word2[0:len1])+word2[len1:]
+
+
+    elif len1 == len2:
+        return combine(word1,word2)
+
+print(mergeAlternately("abc123","def"))
