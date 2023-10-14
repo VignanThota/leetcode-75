@@ -50,7 +50,7 @@ def kidsWithCandies(candies: list[int], extraCandies: int) -> list[bool]:
 
 print(kidsWithCandies([2,3,5,1,3],3))
 
-#2nd Variant
+#2nd Variant with finding max initially and the calculating
 
 def kidsWithCandies_2(candies: list[int], extraCandies: int) -> list[bool]:
         max_candies = 0
